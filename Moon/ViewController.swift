@@ -20,13 +20,14 @@ class ViewController: UIViewController {
 
         //        self.navigationController?.navigationBar.clipsToBounds = true
 
-
-        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = {
+        let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
+        layout.itemSize = {
             let screenRect = UIScreen.mainScreen().bounds
             let width = screenRect.width / 7
             let height = collectionView.bounds.height / 4
             return CGSize(width: width, height: height)
             }()
+        layout.sectionHeadersPinToVisibleBounds = true
 
     }
 
@@ -46,7 +47,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
+// id =
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }

@@ -14,7 +14,7 @@ class DateCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.whiteColor()
     }
 }
 
@@ -23,7 +23,7 @@ class FirstDayCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.whiteColor()
     }
 }
 
