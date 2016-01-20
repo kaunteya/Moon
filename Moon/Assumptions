@@ -1,2 +1,12 @@
+------ Assumptions ------
 - App only supports portrait mode
 - Range of calendar is - 4 months to this years december
+
+------ TO DO ------
+App
+Collection View
+    Grid seperators
+    Custom selection highlighter
+    Drag must fade and show Month name
+Table View
+Add Event

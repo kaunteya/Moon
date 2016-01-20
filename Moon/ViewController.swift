@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,14 +22,13 @@ class ViewController: UIViewController {
         //        self.navigationController?.navigationBar.clipsToBounds = true
 
         let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
+
         layout.itemSize = {
             let screenRect = UIScreen.mainScreen().bounds
             let width = screenRect.width / 7
             let height = collectionView.bounds.height / 4
             return CGSize(width: width, height: height)
             }()
-        layout.sectionHeadersPinToVisibleBounds = true
-
     }
 
     var startDate: NSDate {
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource {
 // id =
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -57,23 +57,39 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-
         let index: Int = indexPath.indexAtPosition(1)
         let date = startDate.dateByAddingDays(index)
-        print("Date \(index)  \(date.toString(format: .Custom("dd MMM yyyy HH:mm:ss")))")
 
         if date.day() == 1 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("firstDayCell", forIndexPath: indexPath) as! FirstDayCell
-            cell.month.text = date.shortMonthToString()
+
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("dateCell", forIndexPath: indexPath) as! DateCell
-            let text: String = "\(date.day())"
-            cell.textField.text = text
+
+            cell.updateForDate(date)
 
             return cell
         }
     }
 }
 
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
+            cell.notifyCellSelected()
 
+        } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
+
+        }
+
+    }
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        print("+++++++")
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
+            cell.notifyCellDeselected()
+        } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
+        }
+
+    }
+}

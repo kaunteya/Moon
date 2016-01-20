@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -98,8 +99,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" misplaced="YES" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-RU-U10">
-                                                    <rect key="frame" x="30" y="13" width="26" height="24"/>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd2-by-yIe">
+                                                    <rect key="frame" x="20" y="5" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="hd2-by-yIe" secondAttribute="height" multiplier="1:1" id="mgF-Aj-1jC"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-RU-U10">
+                                                    <rect key="frame" x="29" y="13" width="22" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -108,11 +115,15 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Baa-RU-U10" firstAttribute="centerY" secondItem="SDc-9w-vi1" secondAttribute="centerY" id="Lcs-4Y-vlM"/>
-                                            <constraint firstItem="Baa-RU-U10" firstAttribute="centerX" secondItem="SDc-9w-vi1" secondAttribute="centerX" id="ql6-Hu-jxY"/>
+                                            <constraint firstItem="Baa-RU-U10" firstAttribute="centerY" secondItem="SDc-9w-vi1" secondAttribute="centerY" id="A2e-sk-PwP"/>
+                                            <constraint firstItem="Baa-RU-U10" firstAttribute="centerX" secondItem="SDc-9w-vi1" secondAttribute="centerX" id="Eds-PF-Ctl"/>
+                                            <constraint firstItem="hd2-by-yIe" firstAttribute="centerX" secondItem="SDc-9w-vi1" secondAttribute="centerX" id="NDB-vD-zg6"/>
+                                            <constraint firstItem="hd2-by-yIe" firstAttribute="height" secondItem="SDc-9w-vi1" secondAttribute="height" multiplier="0.8" id="apM-hF-LrV"/>
+                                            <constraint firstItem="hd2-by-yIe" firstAttribute="centerY" secondItem="SDc-9w-vi1" secondAttribute="centerY" id="eOv-GW-UJ6"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="textField" destination="Baa-RU-U10" id="v53-aQ-rgB"/>
+                                            <outlet property="backgroundCircle" destination="hd2-by-yIe" id="KYK-0z-nuf"/>
+                                            <outlet property="dateField" destination="Baa-RU-U10" id="ldw-U5-1Qf"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstDayCell" id="iU7-Z6-m8J" customClass="FirstDayCell" customModule="Moon" customModuleProvider="target">
@@ -147,7 +158,7 @@
                                             <constraint firstItem="44B-uH-wle" firstAttribute="centerY" secondItem="iU7-Z6-m8J" secondAttribute="centerY" id="bRa-qG-h4w"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="month" destination="rKX-OE-Yry" id="U2q-NQ-K36"/>
+                                            <outlet property="monthField" destination="rKX-OE-Yry" id="MdZ-ee-KEj"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -158,6 +169,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="hil-PL-U2o"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tBZ-1E-ORh"/>
                                 </connections>
                             </collectionView>
                         </subviews>

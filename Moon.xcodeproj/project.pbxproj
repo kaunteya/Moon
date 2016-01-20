@@ -18,6 +18,7 @@
 		E3AC7CA71C4F9B2400606DA1 /* Assumptions in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7CA41C4F9B2400606DA1 /* Assumptions */; };
 		E3AC7CA81C4F9B2400606DA1 /* screenshot1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7CA51C4F9B2400606DA1 /* screenshot1.PNG */; };
 		E3AC7CA91C4F9B2400606DA1 /* screenshot2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7CA61C4F9B2400606DA1 /* screenshot2.jpg */; };
+		E3AC7CAC1C4FBD5F00606DA1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7CAB1C4FBD5F00606DA1 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E3AC7CA41C4F9B2400606DA1 /* Assumptions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Assumptions; sourceTree = "<group>"; };
 		E3AC7CA51C4F9B2400606DA1 /* screenshot1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.PNG; sourceTree = "<group>"; };
 		E3AC7CA61C4F9B2400606DA1 /* screenshot2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screenshot2.jpg; sourceTree = "<group>"; };
+		E3AC7CAB1C4FBD5F00606DA1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E3AC7C5D1C4E34CA00606DA1 /* Main.storyboard */,
 				E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */,
 				E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */,
+				E3AC7CAB1C4FBD5F00606DA1 /* UIColor.swift */,
 				E3AC7CA01C4F914100606DA1 /* CollectionViewCells.swift */,
 				E3AC7CA21C4F915100606DA1 /* AFDateExtension.swift */,
 				E3AC7C631C4E34CA00606DA1 /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */,
+				E3AC7CAC1C4FBD5F00606DA1 /* UIColor.swift in Sources */,
 				E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */,
 				E3AC7CA11C4F914100606DA1 /* CollectionViewCells.swift in Sources */,
 				E3AC7C621C4E34CA00606DA1 /* Moon.xcdatamodeld in Sources */,
