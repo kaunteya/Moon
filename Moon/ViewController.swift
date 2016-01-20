@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         startDate = startDate.dateAtTheStartOfMonth()
         startDate = startDate.dateBySubtractingDays(80)
         startDate = startDate.dateAtTheStartOfMonth()
+        startDate = startDate.dateAtStartOfWeek()
         return startDate.dateAtStartOfDay()
     }
 
@@ -42,8 +43,6 @@ class ViewController: UIViewController {
         let endDate = NSDate(fromString:  "2016-12-31", format: .ISO8601(nil))
         return endDate.dateAtStartOfDay()
     }
-
-
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
