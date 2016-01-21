@@ -57,8 +57,13 @@ class FirstDayCell: DateCell {
         super.updateForDate(date)
         self.monthField.text = date.shortMonthToString()
     }
+    override func notifyCellSelected() {
+        super.notifyCellSelected()
+        monthField.hidden = true
+    }
     override func notifyCellDeselected() {
         backgroundCircle.hidden = true
+        monthField.hidden = false
         dateField.textColor = Color.orange
         monthField.textColor = Color.orange
     }

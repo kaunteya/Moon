@@ -62,7 +62,7 @@ extension ViewController: UICollectionViewDataSource {
 
         if date.day() == 1 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("firstDayCell", forIndexPath: indexPath) as! FirstDayCell
-
+            cell.updateForDate(date)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("dateCell", forIndexPath: indexPath) as! DateCell
@@ -78,17 +78,16 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
             cell.notifyCellSelected()
-
         } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
-
+            cell.notifyCellSelected()
         }
 
     }
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        print("+++++++")
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
             cell.notifyCellDeselected()
         } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
+            cell.notifyCellDeselected()
         }
 
     }

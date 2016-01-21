@@ -106,7 +106,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-RU-U10">
-                                                    <rect key="frame" x="29" y="13" width="22" height="24"/>
+                                                    <rect key="frame" x="29" y="13" width="21.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -127,12 +127,18 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstDayCell" id="iU7-Z6-m8J" customClass="FirstDayCell" customModule="Moon" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="0.0" width="80" height="50"/>
+                                        <rect key="frame" x="86.5" y="0.0" width="80" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ib-XN-CvK">
+                                                    <rect key="frame" x="20" y="5" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1Ib-XN-CvK" secondAttribute="height" multiplier="1:1" id="uJe-ex-b7e"/>
+                                                    </constraints>
+                                                </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="44B-uH-wle">
                                                     <rect key="frame" x="31" y="7" width="18" height="36"/>
                                                     <subviews>
@@ -155,9 +161,14 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="44B-uH-wle" firstAttribute="centerX" secondItem="iU7-Z6-m8J" secondAttribute="centerX" id="0RH-kw-b4U"/>
+                                            <constraint firstItem="1Ib-XN-CvK" firstAttribute="centerY" secondItem="iU7-Z6-m8J" secondAttribute="centerY" id="Ut0-mt-YGf"/>
+                                            <constraint firstItem="1Ib-XN-CvK" firstAttribute="height" secondItem="iU7-Z6-m8J" secondAttribute="height" multiplier="0.8" id="bGA-za-ygM"/>
                                             <constraint firstItem="44B-uH-wle" firstAttribute="centerY" secondItem="iU7-Z6-m8J" secondAttribute="centerY" id="bRa-qG-h4w"/>
+                                            <constraint firstItem="1Ib-XN-CvK" firstAttribute="centerX" secondItem="iU7-Z6-m8J" secondAttribute="centerX" id="nfc-NE-fuE"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="backgroundCircle" destination="1Ib-XN-CvK" id="wSJ-zV-1M7"/>
+                                            <outlet property="dateField" destination="3My-zs-3pZ" id="ytd-3c-am7"/>
                                             <outlet property="monthField" destination="rKX-OE-Yry" id="MdZ-ee-KEj"/>
                                         </connections>
                                     </collectionViewCell>
