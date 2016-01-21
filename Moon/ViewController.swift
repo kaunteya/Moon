@@ -29,6 +29,14 @@ class ViewController: UIViewController {
             let height = collectionView.bounds.height / 4
             return CGSize(width: width, height: height)
             }()
+
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        let delta = startDate.daysBeforeDate(NSDate())
+        let indexPath = NSIndexPath(forItem: delta, inSection: 0)
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
+        collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .CenteredVertically)
     }
 
     var startDate: NSDate {
@@ -47,7 +55,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDataSource {
-// id =
+
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -67,7 +75,6 @@ extension ViewController: UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("dateCell", forIndexPath: indexPath) as! DateCell
             cell.makeCellForDate(date)
-
             return cell
         }
     }
@@ -80,7 +87,6 @@ extension ViewController: UICollectionViewDelegate {
         } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
             cell.notifyCellSelected()
         }
-
     }
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
