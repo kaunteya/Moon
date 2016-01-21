@@ -14,13 +14,8 @@ class DateCell: UICollectionViewCell {
     @IBOutlet weak var dateField: UILabel!
     @IBOutlet weak var backgroundCircle: UIView!
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    func updateForDate(date: NSDate) {
-        let text: String = "\(date.day())"
-        self.dateField.text = text
+    func makeCellForDate(date: NSDate) {
+        dateField.text = "\(date.day())"
 
         let today = NSDate.yesterday().dateByAddingDays(1)
         if date.compare(today) == .OrderedAscending {
@@ -29,9 +24,14 @@ class DateCell: UICollectionViewCell {
             self.backgroundColor = UIColor.whiteColor()
         }
         if date.isToday() {
-            self.dateField.font = UIFont.boldSystemFontOfSize(self.dateField.font.pointSize)
+            dateField.font = UIFont.boldSystemFontOfSize(dateField.font.pointSize)
+        } else {
+            dateField.font = UIFont.systemFontOfSize(dateField.font.pointSize)
         }
+    }
 
+    override func prepareForReuse() {
+        self.notifyCellDeselected()
     }
 
     override func awakeFromNib() {
@@ -53,14 +53,21 @@ class DateCell: UICollectionViewCell {
 class FirstDayCell: DateCell {
     @IBOutlet weak var monthField: UILabel!
 
-    override func updateForDate(date: NSDate) {
-        super.updateForDate(date)
+    override func makeCellForDate(date: NSDate) {
+        super.makeCellForDate(date)
         self.monthField.text = date.shortMonthToString()
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.notifyCellDeselected()
+    }
+
     override func notifyCellSelected() {
         super.notifyCellSelected()
         monthField.hidden = true
     }
+
     override func notifyCellDeselected() {
         backgroundCircle.hidden = true
         monthField.hidden = false

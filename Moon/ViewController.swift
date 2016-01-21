@@ -62,12 +62,11 @@ extension ViewController: UICollectionViewDataSource {
 
         if date.day() == 1 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("firstDayCell", forIndexPath: indexPath) as! FirstDayCell
-            cell.updateForDate(date)
+            cell.makeCellForDate(date)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("dateCell", forIndexPath: indexPath) as! DateCell
-
-            cell.updateForDate(date)
+            cell.makeCellForDate(date)
 
             return cell
         }
