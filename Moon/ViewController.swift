@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
         let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
 
+
         layout.itemSize = {
             let screenRect = UIScreen.mainScreen().bounds
             let width = screenRect.width / 7
@@ -35,8 +36,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         let delta = startDate.daysBeforeDate(NSDate())
         let indexPath = NSIndexPath(forItem: delta, inSection: 0)
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
         collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .CenteredVertically)
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
     }
 
     var startDate: NSDate {
@@ -94,6 +95,13 @@ extension ViewController: UICollectionViewDelegate {
         } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
             cell.notifyCellDeselected()
         }
+    }
 
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        print("Begin dragging")
+    }
+
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print("Will end dragging")
     }
 }

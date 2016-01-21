@@ -28,9 +28,6 @@ class DateCell: UICollectionViewCell {
         } else {
             dateField.font = UIFont.systemFontOfSize(dateField.font.pointSize)
         }
-        if self.selected {
-            notifyCellSelected()
-        }
     }
 
     override func prepareForReuse() {
@@ -59,9 +56,6 @@ class FirstDayCell: DateCell {
     override func makeCellForDate(date: NSDate) {
         super.makeCellForDate(date)
         self.monthField.text = date.shortMonthToString()
-        if self.selected {
-            notifyCellSelected()
-        }
     }
 
     override func prepareForReuse() {
