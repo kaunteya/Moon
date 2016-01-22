@@ -6,7 +6,8 @@
 App
 Collection View
     Grid seperators
-    Custom selection highlighter
-    Drag must fade and show Month name
+    show Month name
+    seperate collectionview controller
+    Add search
 Table View
 Add Event

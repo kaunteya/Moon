@@ -22,6 +22,21 @@ extension NSDate {
 
         return self.isEqualToDateIgnoringTime(centerDateOfMonth)
     }
+
+    static var startDate: NSDate {
+        var startDate = NSDate()
+        startDate = startDate.dateAtTheStartOfMonth()
+        startDate = startDate.dateBySubtractingDays(80)
+        startDate = startDate.dateAtTheStartOfMonth()
+        startDate = startDate.dateAtStartOfWeek()
+        return startDate.dateAtStartOfDay()
+    }
+
+    static var endDate: NSDate {
+        let endDate = NSDate(fromString:  "2016-12-31", format: .ISO8601(nil))
+        return endDate.dateAtStartOfDay()
+    }
+
     var log: String {
         return self.toString(format: .Custom("dd MMM yyyy"))
         //        self.toString(format: .Custom("dd MMM yyyy HH:mm:ss"))

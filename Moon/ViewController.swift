@@ -11,19 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var tableViewController: EventTableviewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TO hide the under line of naviagation bar
-//        navigationController?.navigationBar.shadowImage = UIImage();
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-
-        //        self.navigationController?.navigationBar.clipsToBounds = true
-
+        self.addChildViewController(tableViewController)
+        tableViewController.didMoveToParentViewController(self)
+        
+        // Collection View
         let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
-
-
         layout.itemSize = {
             let screenRect = UIScreen.mainScreen().bounds
             let width = screenRect.width / 7
@@ -31,28 +28,16 @@ class ViewController: UIViewController {
             return CGSize(width: width, height: height)
             }()
 
+        self.navigationItem.titleView =  UIImageView(image: UIImage(named: "AppIcon29x29")!)
     }
 
     override func viewDidAppear(animated: Bool) {
-        let delta = startDate.daysBeforeDate(NSDate())
+        let delta = NSDate.startDate.daysBeforeDate(NSDate())
         let indexPath = NSIndexPath(forItem: delta, inSection: 0)
         collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .CenteredVertically)
         collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
     }
 
-    var startDate: NSDate {
-        var startDate = NSDate()
-        startDate = startDate.dateAtTheStartOfMonth()
-        startDate = startDate.dateBySubtractingDays(80)
-        startDate = startDate.dateAtTheStartOfMonth()
-        startDate = startDate.dateAtStartOfWeek()
-        return startDate.dateAtStartOfDay()
-    }
-
-    var endDate: NSDate {
-        let endDate = NSDate(fromString:  "2016-12-31", format: .ISO8601(nil))
-        return endDate.dateAtStartOfDay()
-    }
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -62,12 +47,12 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return startDate.daysBeforeDate(endDate)
+        return NSDate.startDate.daysBeforeDate(NSDate.endDate)
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let index: Int = indexPath.indexAtPosition(1)
-        let date = startDate.dateByAddingDays(index)
+        let date = NSDate.startDate.dateByAddingDays(index)
 
         if date.day() == 1 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("firstDayCell", forIndexPath: indexPath) as! FirstDayCell
