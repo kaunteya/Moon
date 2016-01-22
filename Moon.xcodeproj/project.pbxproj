@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3581EA71C521312006C8D78 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581EA61C521312006C8D78 /* Date.swift */; };
 		E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */; };
 		E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */; };
 		E3AC7C5F1C4E34CA00606DA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7C5D1C4E34CA00606DA1 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E3581EA61C521312006C8D78 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E3AC7C561C4E34CA00606DA1 /* Moon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */,
 				E3AC7CAB1C4FBD5F00606DA1 /* UIColor.swift */,
 				E3AC7CA01C4F914100606DA1 /* CollectionViewCells.swift */,
+				E3581EA61C521312006C8D78 /* Date.swift */,
 				E3AC7CA21C4F915100606DA1 /* AFDateExtension.swift */,
 				E3AC7C631C4E34CA00606DA1 /* Assets.xcassets */,
 				E3AC7CAA1C4F9DFA00606DA1 /* Meta */,
@@ -169,6 +172,7 @@
 			files = (
 				E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */,
 				E3AC7CAC1C4FBD5F00606DA1 /* UIColor.swift in Sources */,
+				E3581EA71C521312006C8D78 /* Date.swift in Sources */,
 				E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */,
 				E3AC7CA11C4F914100606DA1 /* CollectionViewCells.swift in Sources */,
 				E3AC7C621C4E34CA00606DA1 /* Moon.xcdatamodeld in Sources */,
@@ -320,6 +324,7 @@
 				E3AC7C6D1C4E34CA00606DA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

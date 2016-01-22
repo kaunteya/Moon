@@ -82,6 +82,7 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 extension ViewController: UICollectionViewDelegate {
+
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
             cell.notifyCellSelected()
@@ -89,6 +90,7 @@ extension ViewController: UICollectionViewDelegate {
             cell.notifyCellSelected()
         }
     }
+
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
             cell.notifyCellDeselected()
@@ -98,10 +100,10 @@ extension ViewController: UICollectionViewDelegate {
     }
 
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        print("Begin dragging")
+        collectionView.alpha = 0.3
     }
 
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print("Will end dragging")
+        collectionView.alpha = 1.0
     }
 }

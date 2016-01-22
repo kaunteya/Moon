@@ -10,11 +10,12 @@
 import UIKit
 
 class DateCell: UICollectionViewCell {
-
+    var dateSource: NSDate!
     @IBOutlet weak var dateField: UILabel!
     @IBOutlet weak var backgroundCircle: UIView!
 
     func makeCellForDate(date: NSDate) {
+        dateSource = date
         dateField.text = "\(date.day())"
 
         let today = NSDate.yesterday().dateByAddingDays(1)
@@ -30,8 +31,14 @@ class DateCell: UICollectionViewCell {
         }
     }
 
-    override func prepareForReuse() {
-        self.notifyCellDeselected()
+    override var selected: Bool {
+        didSet {
+            if selected {
+                notifyCellSelected()
+            } else {
+                notifyCellDeselected()
+            }
+        }
     }
 
     override func awakeFromNib() {
