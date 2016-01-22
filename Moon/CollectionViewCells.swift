@@ -14,6 +14,11 @@ class DateCell: UICollectionViewCell {
     @IBOutlet weak var dateField: UILabel!
     @IBOutlet weak var backgroundCircle: UIView!
 
+    override func awakeFromNib() {
+        backgroundCircle.layer.backgroundColor = Color.backgroundBlue.CGColor
+        backgroundCircle.layer.cornerRadius = (backgroundCircle.bounds.height / 2) * 1.11
+    }
+
     func makeCellForDate(date: NSDate) {
         dateSource = date
         dateField.text = "\(date.day())"
@@ -44,10 +49,6 @@ class DateCell: UICollectionViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        backgroundCircle.layer.backgroundColor = Color.backgroundBlue.CGColor
-        backgroundCircle.layer.cornerRadius = (backgroundCircle.bounds.height / 2) * 1.11
-    }
 }
 
 class FirstDayCell: DateCell {
