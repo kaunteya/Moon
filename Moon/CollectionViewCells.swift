@@ -34,9 +34,12 @@ class DateCell: UICollectionViewCell {
     override var selected: Bool {
         didSet {
             if selected {
-                notifyCellSelected()
+                backgroundCircle.hidden = false
+                dateField.textColor = UIColor.whiteColor()
+
             } else {
-                notifyCellDeselected()
+                backgroundCircle.hidden = true
+                dateField.textColor = UIColor.blackColor()
             }
         }
     }
@@ -44,16 +47,6 @@ class DateCell: UICollectionViewCell {
     override func awakeFromNib() {
         backgroundCircle.layer.backgroundColor = Color.backgroundBlue.CGColor
         backgroundCircle.layer.cornerRadius = (backgroundCircle.bounds.height / 2) * 1.11
-    }
-
-    func notifyCellSelected() {
-        backgroundCircle.hidden = false
-        dateField.textColor = UIColor.whiteColor()
-    }
-
-    func notifyCellDeselected() {
-        backgroundCircle.hidden = true
-        dateField.textColor = UIColor.blackColor()
     }
 }
 
@@ -68,23 +61,14 @@ class FirstDayCell: DateCell {
     override var selected: Bool {
         didSet {
             if selected {
-                notifyCellSelected()
+                monthField.hidden = true
             } else {
-                notifyCellDeselected()
+                backgroundCircle.hidden = true
+                monthField.hidden = false
+                dateField.textColor = Color.orange
+                monthField.textColor = Color.orange
             }
         }
-    }
-
-    override func notifyCellSelected() {
-        super.notifyCellSelected()
-        monthField.hidden = true
-    }
-
-    override func notifyCellDeselected() {
-        backgroundCircle.hidden = true
-        monthField.hidden = false
-        dateField.textColor = Color.orange
-        monthField.textColor = Color.orange
     }
 }
 
