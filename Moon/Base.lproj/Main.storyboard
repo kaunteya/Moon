@@ -179,8 +179,8 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hil-PL-U2o"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tBZ-1E-ORh"/>
+                                    <outlet property="dataSource" destination="3md-ck-Lc0" id="Gy7-3f-Idw"/>
+                                    <outlet property="delegate" destination="3md-ck-Lc0" id="hbM-pS-g8e"/>
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yCF-Ts-V2E">
@@ -256,7 +256,7 @@
                         <barButtonItem key="rightBarButtonItem" image="Add.png" id="90o-5P-SFC"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="dv3-Be-laB" id="ldg-59-VcG"/>
+                        <outlet property="calendarViewController" destination="3md-ck-Lc0" id="bnX-wB-EXP"/>
                         <outlet property="tableViewController" destination="yOs-bk-Qd7" id="tJ5-SC-Ctx"/>
                     </connections>
                 </viewController>
@@ -264,6 +264,11 @@
                 <customObject id="yOs-bk-Qd7" customClass="EventTableviewController" customModule="Moon" customModuleProvider="target">
                     <connections>
                         <outlet property="tableView_" destination="yCF-Ts-V2E" id="t0Q-gO-tLn"/>
+                    </connections>
+                </customObject>
+                <customObject id="3md-ck-Lc0" customClass="CalenderCollectionView" customModule="Moon" customModuleProvider="target">
+                    <connections>
+                        <outlet property="collectionView" destination="dv3-Be-laB" id="2iw-Du-vBz"/>
                     </connections>
                 </customObject>
             </objects>
