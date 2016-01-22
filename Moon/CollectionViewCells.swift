@@ -65,9 +65,14 @@ class FirstDayCell: DateCell {
         self.monthField.text = date.shortMonthToString()
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.notifyCellDeselected()
+    override var selected: Bool {
+        didSet {
+            if selected {
+                notifyCellSelected()
+            } else {
+                notifyCellDeselected()
+            }
+        }
     }
 
     override func notifyCellSelected() {

@@ -83,22 +83,6 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
-            cell.notifyCellSelected()
-        } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
-            cell.notifyCellSelected()
-        }
-    }
-
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DateCell {
-            cell.notifyCellDeselected()
-        } else if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? FirstDayCell {
-            cell.notifyCellDeselected()
-        }
-    }
-
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         collectionView.alpha = 0.3
     }
