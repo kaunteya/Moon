@@ -52,6 +52,7 @@ extension EventTableviewController: UITableViewDelegate {
         let label: UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: tableView.frame.size.width, height: 18))
         label.font = UIFont.boldSystemFontOfSize(12)
 
+        // Update the labels in section headers
         label.text = {
             var str = "\(date.weekdayToString()), \(date.day()) \(date.monthToString())"
             if date.isToday() {
@@ -69,5 +70,10 @@ extension EventTableviewController: UITableViewDelegate {
         view.backgroundColor = Color.tableHeader
 
         return view
+    }
+
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        // Notify calenderView to compress its height
+        (self.parentViewController as! ViewController).calendarViewController.compressHeight = true
     }
 }

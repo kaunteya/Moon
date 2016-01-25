@@ -9,7 +9,26 @@
 import UIKit
 
 class CalenderCollectionView: UIViewController {
+
     @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+
+    var compressHeight: Bool = false {
+        didSet {
+            guard compressHeight != oldValue else {
+                return
+            }
+            let cellHeight = 45
+            let newHeight = compressHeight ? (cellHeight * 2) : (cellHeight * 4)
+
+            collectionView.superview!.layoutIfNeeded()
+            heightConstraint.constant = CGFloat(newHeight)
+            UIView.animateWithDuration(0.3) { () -> Void in
+                self.collectionView.superview!.layoutIfNeeded()
+            }
+        }
+    }
 
     func updateLayout() {
         // Collection View
@@ -65,6 +84,7 @@ extension CalenderCollectionView: UICollectionViewDelegate {
 
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         collectionView.alpha = 0.3
+        self.compressHeight = false
     }
 
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
