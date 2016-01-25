@@ -16,17 +16,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        calendarViewController.updateLayout()
+
         self.addChildViewController(tableViewController)
         tableViewController.didMoveToParentViewController(self)
 
         self.addChildViewController(calendarViewController)
-        tableViewController.didMoveToParentViewController(self)
-        
-        calendarViewController.updateLayout()
+        calendarViewController.didMoveToParentViewController(self)
+
         self.navigationItem.titleView =  UIImageView(image: UIImage(named: "AppIcon29x29")!)
     }
 
     override func viewDidAppear(animated: Bool) {
+        tableViewController.notifySelectedDateChangedToDate(NSDate(), animated: false)
+        calendarViewController.notifySelectedDateChangedToDate(NSDate(), animated: false)
     }
 
 }

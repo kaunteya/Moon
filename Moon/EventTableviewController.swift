@@ -13,9 +13,9 @@ class EventTableviewController: UIViewController {
 
     let names = ["A"]
 
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        let indexPath = NSIndexPath(forRow: 0, inSection: NSDate.startDate.daysBeforeDate(NSDate()))
-        tableView_.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
+    func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
+        let indexPath = NSIndexPath(forRow: 0, inSection: NSDate.startDate.daysBeforeDate(date))
+        tableView_.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: animated)
     }
 }
 
@@ -34,16 +34,14 @@ extension EventTableviewController: UITableViewDataSource {
 //        cell.textLabel?.text = names[index]
         return cell
     }
-//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "MAke \(section)"
-//        let date = NSDate.startDate.dateByAddingDays(section)
-//    }
 }
 
 extension EventTableviewController: UITableViewDelegate {
+
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25.0
     }
+
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.min
     }

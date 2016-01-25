@@ -14,19 +14,24 @@ class CalenderCollectionView: UIViewController {
     func updateLayout() {
         // Collection View
         let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
+
         layout.itemSize = {
             let screenRect = UIScreen.mainScreen().bounds
             let width = screenRect.width / 7
-            let height = collectionView.bounds.height / 4
+            let height = collectionView.frame.height / 5
             return CGSize(width: width, height: height)
             }()
+        print("collectionView.bounds.height \(collectionView.bounds.height)")
+        print("collectionView.frame.height \(collectionView.frame.height)")
+        print("Final \(collectionView.collectionViewLayout .collectionViewContentSize())")
+        print("Item size must be \(collectionView.frame.height / 5) \(layout.itemSize)")
     }
 
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        let delta = NSDate.startDate.daysBeforeDate(NSDate())
+    func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
+        let delta = NSDate.startDate.daysBeforeDate(date)
         let indexPath = NSIndexPath(forItem: delta, inSection: 0)
         collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .CenteredVertically)
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: animated)
     }
 }
 
@@ -57,6 +62,11 @@ extension CalenderCollectionView: UICollectionViewDataSource {
 }
 
 extension CalenderCollectionView: UICollectionViewDelegate {
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DateCell
+        (self.parentViewController as! ViewController).tableViewController.notifySelectedDateChangedToDate(cell.dateSource, animated: true)
+    }
 
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         collectionView.alpha = 0.3
