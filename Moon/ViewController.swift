@@ -27,9 +27,13 @@ class ViewController: UIViewController {
         self.navigationItem.titleView =  UIImageView(image: UIImage(named: "AppIcon29x29")!)
     }
 
+    override func viewDidLayoutSubviews() {
+        calendarViewController.viewDidLayoutSubviews()
+        tableViewController.viewDidLayoutSubviews()
+    }
+
     override func viewDidAppear(animated: Bool) {
         tableViewController.notifySelectedDateChangedToDate(NSDate(), animated: false)
         calendarViewController.notifySelectedDateChangedToDate(NSDate(), animated: false)
     }
-
 }

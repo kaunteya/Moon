@@ -13,6 +13,8 @@ class CalenderCollectionView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    var searchBar: UISearchBar!
+    var currentSearchOffset: CGFloat = 0.0
 
     var compressHeight: Bool = false {
         didSet {
@@ -30,6 +32,10 @@ class CalenderCollectionView: UIViewController {
         }
     }
 
+    override func viewDidLayoutSubviews() {
+        searchBar.frame.size.width = collectionView.frame.width
+    }
+
     func updateLayout() {
         // Collection View
         let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
@@ -39,6 +45,10 @@ class CalenderCollectionView: UIViewController {
             let width = screenRect.width / 7
             return width
             }()
+
+        searchBar = UISearchBar(frame: CGRect(x: 0, y: -44, width: collectionView.frame.width, height: 44))
+        currentSearchOffset = collectionView.contentOffset.y
+        self.collectionView.addSubview(searchBar)
     }
 
     func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
@@ -90,4 +100,26 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         collectionView.alpha = 1.0
     }
+
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if searchBar == nil {
+            searchBar = UISearchBar(frame: CGRect(x: 0, y: -44, width: collectionView.frame.width, height: 44))
+        }
+
+        if currentSearchOffset < collectionView.contentOffset.y {
+        } else {
+            searchBar.frame.origin.y = max(0, collectionView.contentOffset.y)
+        }
+
+        currentSearchOffset = collectionView.contentOffset.y
+    }
 }
+
+
+
+
+
+
+
+
+
