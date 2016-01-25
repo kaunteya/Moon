@@ -16,7 +16,7 @@ class DateCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         backgroundCircle.layer.backgroundColor = Color.backgroundBlue.CGColor
-        backgroundCircle.layer.cornerRadius = (backgroundCircle.bounds.height / 2) * 1.11
+        backgroundCircle.layer.cornerRadius = (backgroundCircle.bounds.height / 2)
     }
 
     func makeCellForDate(date: NSDate) {

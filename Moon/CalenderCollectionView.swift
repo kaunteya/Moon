@@ -15,16 +15,11 @@ class CalenderCollectionView: UIViewController {
         // Collection View
         let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
 
-        layout.itemSize = {
+        layout.itemSize.width = {
             let screenRect = UIScreen.mainScreen().bounds
             let width = screenRect.width / 7
-            let height = collectionView.frame.height / 5
-            return CGSize(width: width, height: height)
+            return width
             }()
-        print("collectionView.bounds.height \(collectionView.bounds.height)")
-        print("collectionView.frame.height \(collectionView.frame.height)")
-        print("Final \(collectionView.collectionViewLayout .collectionViewContentSize())")
-        print("Item size must be \(collectionView.frame.height / 5) \(layout.itemSize)")
     }
 
     func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
