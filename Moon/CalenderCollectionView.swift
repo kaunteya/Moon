@@ -24,6 +24,7 @@ class CalenderCollectionView: UIViewController {
             let cellHeight = 45
             let newHeight = compressHeight ? (cellHeight * 2) : (cellHeight * 4)
 
+            searchBar.frame.origin.y = collectionView.contentOffset.y - 44
             collectionView.superview!.layoutIfNeeded()
             heightConstraint.constant = CGFloat(newHeight)
             UIView.animateWithDuration(0.3) { () -> Void in
