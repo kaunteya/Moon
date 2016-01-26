@@ -27,7 +27,6 @@
 		E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCollectionView.swift; sourceTree = "<group>"; };
 		E39D90511C5692E80030E875 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39D90531C569B490030E875 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		E39D90571C575B210030E875 /* Assumptions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Assumptions; path = Other/Assumptions; sourceTree = SOURCE_ROOT; };
 		E39D90581C575B210030E875 /* screenshot1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = screenshot1.PNG; path = Other/screenshot1.PNG; sourceTree = SOURCE_ROOT; };
 		E39D90591C575B210030E875 /* screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = screenshot2.png; path = Other/screenshot2.png; sourceTree = SOURCE_ROOT; };
 		E3AC7C561C4E34CA00606DA1 /* Moon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +100,6 @@
 		E3AC7CAA1C4F9DFA00606DA1 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
-				E39D90571C575B210030E875 /* Assumptions */,
 				E39D90581C575B210030E875 /* screenshot1.PNG */,
 				E39D90591C575B210030E875 /* screenshot2.png */,
 				E39D90511C5692E80030E875 /* README.md */,
