@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.updateNavBar()
+
         calendarViewController.updateLayout()
 
         self.addChildViewController(tableViewController)
@@ -23,6 +25,12 @@ class ViewController: UIViewController {
 
         self.addChildViewController(calendarViewController)
         calendarViewController.didMoveToParentViewController(self)
+
+    }
+
+    func updateNavBar() {
+        navigationController?.navigationBar.shadowImage = UIImage();
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
 
         let appImage = UIImageView(image: UIImage(named: "AppIcon_noBack")!)
         appImage.frame.size = CGSize(width: 25, height: 25)
