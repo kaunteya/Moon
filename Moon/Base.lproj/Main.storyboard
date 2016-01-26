@@ -92,11 +92,6 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <searchBar key="backgroundView" contentMode="redraw" id="XTE-EM-cIA">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateCell" id="SDc-9w-vi1" customClass="DateCell" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
