@@ -25,14 +25,39 @@ extension EventTableviewController: UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        let dateAtSection = NSDate.startDate.dateByAddingDays(section)
+        if dateAtSection.isToday() || dateAtSection.isTomorrow() {
+            return 3
+        } else {
+            return 1
+        }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableCellNoEvent")!
-        let index: Int = indexPath.indexAtPosition(1)
-//        cell.textLabel?.text = names[index]
-        return cell
+        print("Index \(indexPath)")
+
+        let todayIndex = NSDate.startDate.daysBeforeDate(NSDate())
+        let tomorrowIndex = todayIndex + 1
+
+        if indexPath.indexAtPosition(0) == todayIndex || indexPath.indexAtPosition(0) == tomorrowIndex {
+            let cell = tableView.dequeueReusableCellWithIdentifier("eventDetail")! as! EventTableViewCell
+            switch indexPath.indexAtPosition(1) {
+            case 0:
+                cell.mainLabel.text = "Morning"
+                cell.tempratureLabel.text = "12˚"
+            case 1:
+                cell.mainLabel.text = "Afternoon"
+                cell.tempratureLabel.text = "32˚"
+            case 2:
+                cell.mainLabel.text = "Evening"
+                cell.tempratureLabel.text = "22˚"
+            default: ()
+            }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("tableCellNoEvent")!
+            return cell
+        }
     }
 }
 
@@ -45,7 +70,16 @@ extension EventTableviewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.min
     }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let todayIndex = NSDate.startDate.daysBeforeDate(NSDate())
+        let tomorrowIndex = todayIndex + 1
 
+        if indexPath.indexAtPosition(0) == todayIndex || indexPath.indexAtPosition(0) == tomorrowIndex {
+            return 30
+        } else {
+            return 50
+        }
+    }
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let date = NSDate.startDate.dateByAddingDays(section)
         let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 25))
