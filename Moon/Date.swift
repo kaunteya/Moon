@@ -41,6 +41,13 @@ extension NSDate {
         return NSCalendar.currentCalendar().dateByAddingComponents(dateComp, toDate: self, options: NSCalendarOptions(rawValue: 0))!
     }
 
+    func dateBySubstractingMonths(months: Int) -> NSDate
+    {
+        let dateComp = NSDateComponents()
+        dateComp.month = (months * -1)
+        return NSCalendar.currentCalendar().dateByAddingComponents(dateComp, toDate: self, options: NSCalendarOptions(rawValue: 0))!
+    }
+
     static func monthAtIndex(month: Int) -> String? {
         guard month >= 1 && month <= 12 else {
             return nil

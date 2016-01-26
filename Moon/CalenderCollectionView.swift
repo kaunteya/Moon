@@ -22,6 +22,7 @@ class CalenderCollectionView: UIViewController {
         didSet {
             for cell in collectionView.visibleCells() as! [DateCell] {
                 cell.alpha = blurView ? 0.3 : 1.0
+                monthStackView.hidden = !blurView
             }
         }
     }
@@ -65,13 +66,24 @@ class CalenderCollectionView: UIViewController {
 
     func addMonths() {
 
+        monthStackView.hidden = true
         monthStackView.axis = .Vertical
         monthStackView.distribution = .EqualSpacing
         monthStackView.alignment = .Center
 
         var eachDate = NSDate.startMonth
+        var longGap = false
         while eachDate.compare(NSDate.endDate) == NSComparisonResult.OrderedAscending {
-            monthStackView.addArrangedSubview(UILabel(text: eachDate.monthToString()))
+            let cellMltiplier = longGap ? 3.0 : 5.0
+            monthStackView.addArrangedSubview(UILabel(text: eachDate.monthToString(), height: CGFloat(cellHeight * cellMltiplier)))
+
+            let lastDate = eachDate.dateBySubtractingDays(1).dateAtTheStartOfMonth().dateAtStartOfWeek()
+            let thisDate = eachDate.dateAtStartOfWeek()
+
+//            print("\(eachDate.log)  [\(lastDate.log) \(thisDate.log)]  \(lastDate.daysBeforeDate(thisDate) / 7) ")
+
+            longGap = Int(lastDate.daysBeforeDate(thisDate) / 7) == 5
+
             eachDate = eachDate.dateByAddingMonths(1)
         }
 
@@ -81,6 +93,7 @@ class CalenderCollectionView: UIViewController {
         monthStackView.leadingAnchor.constraintEqualToAnchor(collectionView.leadingAnchor).active = true
         monthStackView.topAnchor.constraintEqualToAnchor(collectionView.topAnchor).active = true
         monthStackView.widthAnchor.constraintEqualToAnchor(collectionView.widthAnchor).active = true
+
     }
 
     func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
@@ -131,7 +144,9 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         self.blurView = false
     }
-
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        self.blurView = false
+    }
     func scrollViewDidScroll(scrollView: UIScrollView) {
         self.blurView = true
 
@@ -145,14 +160,14 @@ extension CalenderCollectionView: UICollectionViewDelegate {
 }
 
 extension UILabel {
-    convenience init(text: String) {
+    convenience init(text: String, height: CGFloat) {
         self.init(frame: CGRect())
         self.text = text
         self.font = UIFont.boldSystemFontOfSize(25)
         self.sizeToFit()
         self.textAlignment = .Center
         self.translatesAutoresizingMaskIntoConstraints = false
-        let heightConstraint = self.heightAnchor.constraintEqualToAnchor(nil, constant: CGFloat(cellHeight * 5.0))
+        let heightConstraint = self.heightAnchor.constraintEqualToAnchor(nil, constant: height)
         NSLayoutConstraint.activateConstraints([heightConstraint])
     }
 }
