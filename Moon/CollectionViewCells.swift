@@ -45,7 +45,7 @@ class DateCell: UICollectionViewCell {
 
             } else {
                 backgroundCircle.hidden = true
-                dateField.textColor = UIColor.blackColor()
+                dateField.textColor = UIColor.grayColor()
             }
         }
     }
