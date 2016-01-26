@@ -8,27 +8,19 @@
 
 import Foundation
 
+import UIKit
+
 extension NSDate {
-    var isCenterDate: Bool {
-        let day = self.day()
-        guard day > 8 && day < 22 else {
-            return false
-        }
-
-        var centerDateOfMonth = self.dateAtTheStartOfMonth()
-        centerDateOfMonth = centerDateOfMonth.dateAtStartOfWeek()
-        centerDateOfMonth = centerDateOfMonth.dateByAddingDays(14) // Advance 2 weeks
-        centerDateOfMonth = centerDateOfMonth.dateByAddingDays(3) // Advance 3 days to center
-
-        return self.isEqualToDateIgnoringTime(centerDateOfMonth)
-    }
 
     static var startDate: NSDate {
+        return NSDate.startMonth.dateAtStartOfWeek()
+    }
+
+    static var startMonth: NSDate {
         var startDate = NSDate()
         startDate = startDate.dateAtTheStartOfMonth()
         startDate = startDate.dateBySubtractingDays(80)
         startDate = startDate.dateAtTheStartOfMonth()
-        startDate = startDate.dateAtStartOfWeek()
         return startDate.dateAtStartOfDay()
     }
 
@@ -40,5 +32,19 @@ extension NSDate {
     var log: String {
         return self.toString(format: .Custom("dd MMM yyyy"))
         //        self.toString(format: .Custom("dd MMM yyyy HH:mm:ss"))
+    }
+
+    func dateByAddingMonths(months: Int) -> NSDate
+    {
+        let dateComp = NSDateComponents()
+        dateComp.month = months
+        return NSCalendar.currentCalendar().dateByAddingComponents(dateComp, toDate: self, options: NSCalendarOptions(rawValue: 0))!
+    }
+
+    static func monthAtIndex(month: Int) -> String? {
+        guard month >= 1 && month <= 12 else {
+            return nil
+        }
+        return ["January", "February", "March", "April", "May", "June", "July", "August", "May", "June", "July", "August", "September", "October", "November", "December"][month - 1]
     }
 }

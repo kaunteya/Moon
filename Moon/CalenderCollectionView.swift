@@ -8,10 +8,12 @@
 
 import UIKit
 
+private let cellHeight = 45.0
+
 class CalenderCollectionView: UIViewController {
-    private let cellHeight = 45
     var searchBar: UISearchBar!
     var currentSearchOffset: CGFloat = 0.0
+    let monthStackView = UIStackView()
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
@@ -42,7 +44,7 @@ class CalenderCollectionView: UIViewController {
 
     override func viewDidLayoutSubviews() {
         searchBar.frame.size.width = collectionView.frame.width
-
+        monthStackView.frame.size.width = collectionView.contentSize.width
     }
 
     func updateLayout() {
@@ -58,6 +60,27 @@ class CalenderCollectionView: UIViewController {
         searchBar = UISearchBar(frame: CGRect(x: 0, y: -44, width: collectionView.frame.width, height: 44))
         currentSearchOffset = collectionView.contentOffset.y
         self.collectionView.addSubview(searchBar)
+        self.addMonths()
+    }
+
+    func addMonths() {
+
+        monthStackView.axis = .Vertical
+        monthStackView.distribution = .EqualSpacing
+        monthStackView.alignment = .Center
+
+        var eachDate = NSDate.startMonth
+        while eachDate.compare(NSDate.endDate) == NSComparisonResult.OrderedAscending {
+            monthStackView.addArrangedSubview(UILabel(text: eachDate.monthToString()))
+            eachDate = eachDate.dateByAddingMonths(1)
+        }
+
+        monthStackView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.addSubview(monthStackView)
+
+        monthStackView.leadingAnchor.constraintEqualToAnchor(collectionView.leadingAnchor).active = true
+        monthStackView.topAnchor.constraintEqualToAnchor(collectionView.topAnchor).active = true
+        monthStackView.widthAnchor.constraintEqualToAnchor(collectionView.widthAnchor).active = true
     }
 
     func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
@@ -118,5 +141,18 @@ extension CalenderCollectionView: UICollectionViewDelegate {
         }
 
         currentSearchOffset = collectionView.contentOffset.y
+    }
+}
+
+extension UILabel {
+    convenience init(text: String) {
+        self.init(frame: CGRect())
+        self.text = text
+        self.font = UIFont.boldSystemFontOfSize(25)
+        self.sizeToFit()
+        self.textAlignment = .Center
+        self.translatesAutoresizingMaskIntoConstraints = false
+        let heightConstraint = self.heightAnchor.constraintEqualToAnchor(nil, constant: CGFloat(cellHeight * 5.0))
+        NSLayoutConstraint.activateConstraints([heightConstraint])
     }
 }
