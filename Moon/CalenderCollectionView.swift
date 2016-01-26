@@ -156,8 +156,13 @@ extension CalenderCollectionView: UICollectionViewDelegate {
         self.blurCalendar = true
 
         if currentSearchOffset < collectionView.contentOffset.y {
+            if (collectionView.contentOffset.y - searchBar.frame.origin.y) > 44 {
+                searchBar.frame.origin.y = collectionView.contentOffset.y - 44
+            }
         } else {
-            searchBar.frame.origin.y = max(0, collectionView.contentOffset.y)
+            if (collectionView.contentOffset.y - searchBar.frame.origin.y) < 0 {
+                searchBar.frame.origin.y = collectionView.contentOffset.y
+            }
         }
 
         currentSearchOffset = collectionView.contentOffset.y
