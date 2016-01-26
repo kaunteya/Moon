@@ -24,7 +24,10 @@ class ViewController: UIViewController {
         self.addChildViewController(calendarViewController)
         calendarViewController.didMoveToParentViewController(self)
 
-        self.navigationItem.titleView =  UIImageView(image: UIImage(named: "AppIcon29x29")!)
+        let appImage = UIImageView(image: UIImage(named: "AppIcon_noBack")!)
+        appImage.frame.size = CGSize(width: 25, height: 25)
+        appImage.contentMode = .ScaleAspectFit
+        self.navigationItem.titleView =  appImage
     }
 
     override func viewDidLayoutSubviews() {
