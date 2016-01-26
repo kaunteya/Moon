@@ -81,7 +81,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjz-21-VOk" userLabel="Line View">
                                 <rect key="frame" x="0.0" y="19" width="600" height="1"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.81082076149425286" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ovy-oG-zAy"/>
                                 </constraints>
@@ -107,6 +107,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldl-s2-4zq" userLabel="Line View">
+                                                    <rect key="frame" x="0.0" y="44" width="80" height="1"/>
+                                                    <color key="backgroundColor" white="0.85613326149425295" alpha="0.39350620567375888" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="fvv-m7-K6o"/>
+                                                    </constraints>
+                                                </view>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd2-by-yIe">
                                                     <rect key="frame" x="22" y="5" width="36" height="36"/>
                                                     <constraints>
@@ -125,7 +132,10 @@
                                         <constraints>
                                             <constraint firstItem="Baa-RU-U10" firstAttribute="centerY" secondItem="SDc-9w-vi1" secondAttribute="centerY" id="A2e-sk-PwP"/>
                                             <constraint firstItem="Baa-RU-U10" firstAttribute="centerX" secondItem="SDc-9w-vi1" secondAttribute="centerX" id="Eds-PF-Ctl"/>
+                                            <constraint firstAttribute="trailing" secondItem="ldl-s2-4zq" secondAttribute="trailing" id="M7s-e6-qoT"/>
+                                            <constraint firstAttribute="bottom" secondItem="ldl-s2-4zq" secondAttribute="bottom" id="NAG-oZ-HeG"/>
                                             <constraint firstItem="hd2-by-yIe" firstAttribute="centerX" secondItem="SDc-9w-vi1" secondAttribute="centerX" id="NDB-vD-zg6"/>
+                                            <constraint firstItem="ldl-s2-4zq" firstAttribute="leading" secondItem="SDc-9w-vi1" secondAttribute="leading" id="VlJ-1l-P8H"/>
                                             <constraint firstItem="hd2-by-yIe" firstAttribute="height" secondItem="SDc-9w-vi1" secondAttribute="height" multiplier="0.8" id="apM-hF-LrV"/>
                                             <constraint firstItem="hd2-by-yIe" firstAttribute="centerY" secondItem="SDc-9w-vi1" secondAttribute="centerY" id="eOv-GW-UJ6"/>
                                         </constraints>
@@ -141,6 +151,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVZ-XV-QhS" userLabel="Line View">
+                                                    <rect key="frame" x="0.0" y="44" width="80" height="1"/>
+                                                    <color key="backgroundColor" white="0.85613326150000002" alpha="0.3935062057" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="jwR-hZ-lEP"/>
+                                                    </constraints>
+                                                </view>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ib-XN-CvK">
                                                     <rect key="frame" x="22" y="5" width="36" height="36"/>
                                                     <constraints>
@@ -169,6 +186,9 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="44B-uH-wle" firstAttribute="centerX" secondItem="iU7-Z6-m8J" secondAttribute="centerX" id="0RH-kw-b4U"/>
+                                            <constraint firstAttribute="bottom" secondItem="RVZ-XV-QhS" secondAttribute="bottom" id="0hu-bd-cqT"/>
+                                            <constraint firstItem="RVZ-XV-QhS" firstAttribute="leading" secondItem="iU7-Z6-m8J" secondAttribute="leading" id="5Cf-KQ-xMJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="RVZ-XV-QhS" secondAttribute="trailing" id="Lud-Ri-1Ro"/>
                                             <constraint firstItem="1Ib-XN-CvK" firstAttribute="centerY" secondItem="iU7-Z6-m8J" secondAttribute="centerY" id="Ut0-mt-YGf"/>
                                             <constraint firstItem="1Ib-XN-CvK" firstAttribute="height" secondItem="iU7-Z6-m8J" secondAttribute="height" multiplier="0.8" id="bGA-za-ygM"/>
                                             <constraint firstItem="44B-uH-wle" firstAttribute="centerY" secondItem="iU7-Z6-m8J" secondAttribute="centerY" id="bRa-qG-h4w"/>

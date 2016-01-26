@@ -139,6 +139,7 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DateCell
         (self.parentViewController as! ViewController).tableViewController.notifySelectedDateChangedToDate(cell.dateSource, animated: true)
+        compressHeight = false
     }
 
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
