@@ -9,6 +9,7 @@
 import UIKit
 
 private let cellHeight = 45.0
+private let searchBarHeight = CGFloat(44)
 
 class CalenderCollectionView: UIViewController {
 
@@ -35,7 +36,7 @@ class CalenderCollectionView: UIViewController {
             }
             let newHeight = compressHeight ? (cellHeight * 2) : (cellHeight * 5)
 
-            searchBar.frame.origin.y = collectionView.contentOffset.y - 44
+            searchBar.frame.origin.y = collectionView.contentOffset.y - searchBarHeight
             collectionView.superview!.layoutIfNeeded()
             heightConstraint.constant = CGFloat(newHeight)
             UIView.animateWithDuration(0.3) { () -> Void in
@@ -63,7 +64,7 @@ class CalenderCollectionView: UIViewController {
     }
 
     func addSearchBar() {
-        searchBar = UISearchBar(frame: CGRect(x: 0, y: -44, width: collectionView.frame.width, height: 44))
+        searchBar = UISearchBar(frame: CGRect(x: 0, y: -searchBarHeight, width: collectionView.frame.width, height: searchBarHeight))
         currentSearchOffset = collectionView.contentOffset.y
         self.collectionView.addSubview(searchBar)
     }
@@ -156,8 +157,8 @@ extension CalenderCollectionView: UICollectionViewDelegate {
         self.blurCalendar = true
 
         if currentSearchOffset < collectionView.contentOffset.y {
-            if (collectionView.contentOffset.y - searchBar.frame.origin.y) > 44 {
-                searchBar.frame.origin.y = collectionView.contentOffset.y - 44
+            if (collectionView.contentOffset.y - searchBar.frame.origin.y) > searchBarHeight {
+                searchBar.frame.origin.y = collectionView.contentOffset.y - searchBarHeight
             }
         } else {
             if (collectionView.contentOffset.y - searchBar.frame.origin.y) < 0 {
