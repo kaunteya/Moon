@@ -58,10 +58,11 @@ class CalenderCollectionView: UIViewController {
             return width
             }()
 
+        self.addMonths()
+
         searchBar = UISearchBar(frame: CGRect(x: 0, y: -44, width: collectionView.frame.width, height: 44))
         currentSearchOffset = collectionView.contentOffset.y
         self.collectionView.addSubview(searchBar)
-        self.addMonths()
     }
 
     func addMonths() {
@@ -144,9 +145,11 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         self.blurView = false
     }
+
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.blurView = false
     }
+
     func scrollViewDidScroll(scrollView: UIScrollView) {
         self.blurView = true
 
