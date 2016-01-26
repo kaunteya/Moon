@@ -21,7 +21,7 @@ class CalenderCollectionView: UIViewController {
             guard compressHeight != oldValue else {
                 return
             }
-            let newHeight = compressHeight ? (cellHeight * 2) : (cellHeight * 4)
+            let newHeight = compressHeight ? (cellHeight * 2) : (cellHeight * 5)
 
             searchBar.frame.origin.y = collectionView.contentOffset.y - 44
             collectionView.superview!.layoutIfNeeded()
