@@ -16,6 +16,14 @@ class CalenderCollectionView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
+    var blurView: Bool = false {
+        didSet {
+            for cell in collectionView.visibleCells() as! [DateCell] {
+                cell.alpha = blurView ? 0.3 : 1.0
+            }
+        }
+    }
+
     var compressHeight: Bool = true {
         didSet {
             guard compressHeight != oldValue else {
@@ -34,6 +42,7 @@ class CalenderCollectionView: UIViewController {
 
     override func viewDidLayoutSubviews() {
         searchBar.frame.size.width = collectionView.frame.width
+
     }
 
     func updateLayout() {
@@ -93,18 +102,15 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     }
 
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        collectionView.alpha = 0.3
         self.compressHeight = false
     }
 
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        collectionView.alpha = 1.0
+        self.blurView = false
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if searchBar == nil {
-            searchBar = UISearchBar(frame: CGRect(x: 0, y: -44, width: collectionView.frame.width, height: 44))
-        }
+        self.blurView = true
 
         if currentSearchOffset < collectionView.contentOffset.y {
         } else {
@@ -114,12 +120,3 @@ extension CalenderCollectionView: UICollectionViewDelegate {
         currentSearchOffset = collectionView.contentOffset.y
     }
 }
-
-
-
-
-
-
-
-
-

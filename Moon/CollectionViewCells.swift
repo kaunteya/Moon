@@ -29,6 +29,7 @@ class DateCell: UICollectionViewCell {
         } else {
             self.backgroundColor = UIColor.whiteColor()
         }
+
         if date.isToday() {
             dateField.font = UIFont.boldSystemFontOfSize(dateField.font.pointSize)
         } else {
