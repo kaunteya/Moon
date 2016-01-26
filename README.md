@@ -2,9 +2,9 @@
 The purpose of this project is to implement only the Home View excludnig the functionality
 
 ## Scope
-* Show Home View User interface
-* Settings button will show the Table view w/o backend functionality
-* Add Button will show the Events page but no actual events will be added
+* Show Home User interface
+* Settings button will show the Table view w/o functionality
+* Add Button will show the Events page w/o functionality
 
 ## Todo
 - [ ] Calendar view  
