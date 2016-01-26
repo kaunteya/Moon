@@ -12,6 +12,7 @@
 		E3581ECC1C528FC9006C8D78 /* CalenderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */; };
 		E39D90521C5692E80030E875 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E39D90511C5692E80030E875 /* README.md */; };
 		E39D90541C569B490030E875 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D90531C569B490030E875 /* OptionsViewController.swift */; };
+		E39D90561C573C910030E875 /* screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = E39D90551C573C910030E875 /* screenshot2.png */; };
 		E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */; };
 		E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */; };
 		E3AC7C5F1C4E34CA00606DA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7C5D1C4E34CA00606DA1 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		E3AC7CA31C4F915100606DA1 /* AFDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7CA21C4F915100606DA1 /* AFDateExtension.swift */; };
 		E3AC7CA71C4F9B2400606DA1 /* Assumptions in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7CA41C4F9B2400606DA1 /* Assumptions */; };
 		E3AC7CA81C4F9B2400606DA1 /* screenshot1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7CA51C4F9B2400606DA1 /* screenshot1.PNG */; };
-		E3AC7CA91C4F9B2400606DA1 /* screenshot2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7CA61C4F9B2400606DA1 /* screenshot2.jpg */; };
 		E3AC7CAC1C4FBD5F00606DA1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7CAB1C4FBD5F00606DA1 /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +32,7 @@
 		E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCollectionView.swift; sourceTree = "<group>"; };
 		E39D90511C5692E80030E875 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E39D90531C569B490030E875 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		E39D90551C573C910030E875 /* screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot2.png; sourceTree = "<group>"; };
 		E3AC7C561C4E34CA00606DA1 /* Moon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		E3AC7CA21C4F915100606DA1 /* AFDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AFDateExtension.swift; path = ../../../mac/github/AFDateHelper/AFDateHelper/AFDateExtension.swift; sourceTree = "<group>"; };
 		E3AC7CA41C4F9B2400606DA1 /* Assumptions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Assumptions; sourceTree = "<group>"; };
 		E3AC7CA51C4F9B2400606DA1 /* screenshot1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.PNG; sourceTree = "<group>"; };
-		E3AC7CA61C4F9B2400606DA1 /* screenshot2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screenshot2.jpg; sourceTree = "<group>"; };
 		E3AC7CAB1C4FBD5F00606DA1 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +110,7 @@
 			children = (
 				E3AC7CA41C4F9B2400606DA1 /* Assumptions */,
 				E3AC7CA51C4F9B2400606DA1 /* screenshot1.PNG */,
-				E3AC7CA61C4F9B2400606DA1 /* screenshot2.jpg */,
+				E39D90551C573C910030E875 /* screenshot2.png */,
 				E39D90511C5692E80030E875 /* README.md */,
 			);
 			name = Meta;
@@ -177,9 +177,9 @@
 				E3AC7C671C4E34CA00606DA1 /* LaunchScreen.storyboard in Resources */,
 				E3AC7CA71C4F9B2400606DA1 /* Assumptions in Resources */,
 				E3AC7C641C4E34CA00606DA1 /* Assets.xcassets in Resources */,
+				E39D90561C573C910030E875 /* screenshot2.png in Resources */,
 				E3AC7CA81C4F9B2400606DA1 /* screenshot1.PNG in Resources */,
 				E3AC7C5F1C4E34CA00606DA1 /* Main.storyboard in Resources */,
-				E3AC7CA91C4F9B2400606DA1 /* screenshot2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
