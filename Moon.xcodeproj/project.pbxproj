@@ -10,15 +10,10 @@
 		E3581EA71C521312006C8D78 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581EA61C521312006C8D78 /* Date.swift */; };
 		E3581ECA1C524AE1006C8D78 /* EventTableviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581EC91C524AE1006C8D78 /* EventTableviewController.swift */; };
 		E3581ECC1C528FC9006C8D78 /* CalenderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */; };
-		E39D90521C5692E80030E875 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E39D90511C5692E80030E875 /* README.md */; };
 		E39D90541C569B490030E875 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D90531C569B490030E875 /* OptionsViewController.swift */; };
-		E39D905A1C575B210030E875 /* Assumptions in Resources */ = {isa = PBXBuildFile; fileRef = E39D90571C575B210030E875 /* Assumptions */; };
-		E39D905B1C575B210030E875 /* screenshot1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E39D90581C575B210030E875 /* screenshot1.PNG */; };
-		E39D905C1C575B210030E875 /* screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = E39D90591C575B210030E875 /* screenshot2.png */; };
 		E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */; };
 		E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */; };
 		E3AC7C5F1C4E34CA00606DA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7C5D1C4E34CA00606DA1 /* Main.storyboard */; };
-		E3AC7C621C4E34CA00606DA1 /* Moon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C601C4E34CA00606DA1 /* Moon.xcdatamodeld */; };
 		E3AC7C641C4E34CA00606DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7C631C4E34CA00606DA1 /* Assets.xcassets */; };
 		E3AC7C671C4E34CA00606DA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7C651C4E34CA00606DA1 /* LaunchScreen.storyboard */; };
 		E3AC7CA11C4F914100606DA1 /* CollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7CA01C4F914100606DA1 /* CollectionViewCells.swift */; };
@@ -39,7 +34,6 @@
 		E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E3AC7C5E1C4E34CA00606DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E3AC7C611C4E34CA00606DA1 /* Moon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moon.xcdatamodel; sourceTree = "<group>"; };
 		E3AC7C631C4E34CA00606DA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3AC7C661C4E34CA00606DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AC7C681C4E34CA00606DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +94,6 @@
 				E3AC7CAA1C4F9DFA00606DA1 /* Meta */,
 				E3AC7C651C4E34CA00606DA1 /* LaunchScreen.storyboard */,
 				E3AC7C681C4E34CA00606DA1 /* Info.plist */,
-				E3AC7C601C4E34CA00606DA1 /* Moon.xcdatamodeld */,
 			);
 			path = Moon;
 			sourceTree = "<group>";
@@ -175,9 +168,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3AC7C671C4E34CA00606DA1 /* LaunchScreen.storyboard in Resources */,
-				E39D905B1C575B210030E875 /* screenshot1.PNG in Resources */,
-				E39D905C1C575B210030E875 /* screenshot2.png in Resources */,
-				E39D905A1C575B210030E875 /* Assumptions in Resources */,
 				E3AC7C641C4E34CA00606DA1 /* Assets.xcassets in Resources */,
 				E3AC7C5F1C4E34CA00606DA1 /* Main.storyboard in Resources */,
 			);
@@ -193,13 +183,11 @@
 				E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */,
 				E39D90541C569B490030E875 /* OptionsViewController.swift in Sources */,
 				E3AC7CAC1C4FBD5F00606DA1 /* Color.swift in Sources */,
-				E39D90521C5692E80030E875 /* README.md in Sources */,
 				E3581ECA1C524AE1006C8D78 /* EventTableviewController.swift in Sources */,
 				E3581EA71C521312006C8D78 /* Date.swift in Sources */,
 				E3581ECC1C528FC9006C8D78 /* CalenderCollectionView.swift in Sources */,
 				E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */,
 				E3AC7CA11C4F914100606DA1 /* CollectionViewCells.swift in Sources */,
-				E3AC7C621C4E34CA00606DA1 /* Moon.xcdatamodeld in Sources */,
 				E3AC7CA31C4F915100606DA1 /* AFDateExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,19 +339,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E3AC7C601C4E34CA00606DA1 /* Moon.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E3AC7C611C4E34CA00606DA1 /* Moon.xcdatamodel */,
-			);
-			currentVersion = E3AC7C611C4E34CA00606DA1 /* Moon.xcdatamodel */;
-			path = Moon.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E3AC7C4E1C4E34CA00606DA1 /* Project object */;
 }
