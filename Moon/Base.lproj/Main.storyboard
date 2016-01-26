@@ -492,7 +492,7 @@
         <image name="Add" width="22" height="22"/>
         <image name="Add.png" width="22" height="22"/>
         <image name="Settings.png" width="25" height="25"/>
-        <image name="screenshot1.PNG" width="750" height="1334"/>
+        <image name="screenshot1.PNG" width="250" height="445"/>
         <image name="sun" width="20" height="20"/>
     </resources>
 </document>
