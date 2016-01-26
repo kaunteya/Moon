@@ -11,6 +11,7 @@ import UIKit
 private let cellHeight = 45.0
 
 class CalenderCollectionView: UIViewController {
+
     var searchBar: UISearchBar!
     var currentSearchOffset: CGFloat = 0.0
     let monthStackView = UIStackView()
@@ -18,11 +19,11 @@ class CalenderCollectionView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
-    var blurView: Bool = false {
+    var blurCalendar: Bool = false {
         didSet {
             for cell in collectionView.visibleCells() as! [DateCell] {
-                cell.alpha = blurView ? 0.3 : 1.0
-                monthStackView.hidden = !blurView
+                cell.alpha = blurCalendar ? 0.3 : 1.0
+                monthStackView.hidden = !blurCalendar
             }
         }
     }
@@ -45,7 +46,6 @@ class CalenderCollectionView: UIViewController {
 
     override func viewDidLayoutSubviews() {
         searchBar.frame.size.width = collectionView.frame.width
-        monthStackView.frame.size.width = collectionView.contentSize.width
     }
 
     func updateLayout() {
@@ -59,7 +59,10 @@ class CalenderCollectionView: UIViewController {
             }()
 
         self.addMonths()
+        self.addSearchBar()
+    }
 
+    func addSearchBar() {
         searchBar = UISearchBar(frame: CGRect(x: 0, y: -44, width: collectionView.frame.width, height: 44))
         currentSearchOffset = collectionView.contentOffset.y
         self.collectionView.addSubview(searchBar)
@@ -84,7 +87,6 @@ class CalenderCollectionView: UIViewController {
 //            print("\(eachDate.log)  [\(lastDate.log) \(thisDate.log)]  \(lastDate.daysBeforeDate(thisDate) / 7) ")
 
             longGap = Int(lastDate.daysBeforeDate(thisDate) / 7) == 5
-
             eachDate = eachDate.dateByAddingMonths(1)
         }
 
@@ -143,15 +145,15 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     }
 
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        self.blurView = false
+        self.blurCalendar = false
     }
 
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        self.blurView = false
+        self.blurCalendar = false
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.blurView = true
+        self.blurCalendar = true
 
         if currentSearchOffset < collectionView.contentOffset.y {
         } else {
