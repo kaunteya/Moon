@@ -89,7 +89,7 @@ class CalenderCollectionView: UIViewController {
             let lastDate = eachDate.dateBySubtractingDays(1).dateAtTheStartOfMonth().dateAtStartOfWeek()
             let thisDate = eachDate.dateAtStartOfWeek()
 
-//            log?.info("\(eachDate.log)  [\(lastDate.log) \(thisDate.log)]  \(lastDate.daysBeforeDate(thisDate) / 7) ")
+//            log.info("\(eachDate.log)  [\(lastDate.log) \(thisDate.log)]  \(lastDate.daysBeforeDate(thisDate) / 7) ")
 
             longGap = Int(lastDate.daysBeforeDate(thisDate) / 7) == 5
             eachDate = eachDate.dateByAddingMonths(1)
