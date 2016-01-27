@@ -34,7 +34,6 @@ extension EventTableviewController: UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("Index \(indexPath)")
 
         let todayIndex = NSDate.startDate.daysBeforeDate(NSDate())
         let tomorrowIndex = todayIndex + 1
