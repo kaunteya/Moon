@@ -28,14 +28,17 @@ class ViewController: UIViewController {
 
     }
 
-    func updateNavBar() {
+    /// Update UI and and Title Image to NavBar
+    private func updateNavBar() {
         navigationController?.navigationBar.shadowImage = UIImage();
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
 
-        let appImage = UIImageView(image: UIImage(named: "AppIcon_noBack")!)
-        appImage.frame.size = CGSize(width: 25, height: 25)
-        appImage.contentMode = .ScaleAspectFit
-        self.navigationItem.titleView =  appImage
+        self.navigationItem.titleView =  {
+            let appImage = UIImageView(image: UIImage(named: "AppIcon_noBack")!)
+            appImage.frame.size = CGSize(width: 25, height: 25)
+            appImage.contentMode = .ScaleAspectFit
+            return appImage
+            }()
     }
 
     override func viewDidLayoutSubviews() {
