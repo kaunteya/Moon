@@ -6,7 +6,6 @@
 //  Copyright © 2016 Kaunteya Suryawanshi. All rights reserved.
 //
 
-
 import UIKit
 
 class DateCell: UICollectionViewCell {
@@ -19,6 +18,7 @@ class DateCell: UICollectionViewCell {
         backgroundCircle.layer.cornerRadius = (backgroundCircle.bounds.height / 2)
     }
 
+    /// Updates the cell content for date
     func makeCellForDate(date: NSDate) {
         dateSource = date
         dateField.text = "\(date.day())"

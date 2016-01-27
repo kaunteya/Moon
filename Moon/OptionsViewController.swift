@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View which is shown when ⚙ button, at left of navbar is tapped
 class OptionsViewController: UITableViewController {
 
     @IBAction func donePressed(sender: UIBarButtonItem) {

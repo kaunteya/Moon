@@ -20,6 +20,7 @@ class CalenderCollectionView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
+    /// Blurs the cells in collection. Used while dragging
     var blurCalendar: Bool = false {
         didSet {
             for cell in collectionView.visibleCells() as! [DateCell] {
@@ -29,6 +30,7 @@ class CalenderCollectionView: UIViewController {
         }
     }
 
+    /// Triggers height expansion and compression of collection view. Used when focus changes
     var compressHeight: Bool = true {
         didSet {
             guard compressHeight != oldValue else {
@@ -49,8 +51,8 @@ class CalenderCollectionView: UIViewController {
         searchBar.frame.size.width = collectionView.frame.width
     }
 
+    /// Updated the view layout and adds months list and search bar
     func updateLayout() {
-        // Collection View
         let layout: UICollectionViewFlowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
 
         layout.itemSize.width = {
@@ -63,13 +65,15 @@ class CalenderCollectionView: UIViewController {
         self.addSearchBar()
     }
 
-    func addSearchBar() {
+    /// Adds search bar to collection view
+    private func addSearchBar() {
         searchBar = UISearchBar(frame: CGRect(x: 0, y: -searchBarHeight, width: collectionView.frame.width, height: searchBarHeight))
         currentSearchOffset = collectionView.contentOffset.y
         self.collectionView.addSubview(searchBar)
     }
 
-    func addMonths() {
+    /// Adds the month label when collection view is being scrolled
+    private func addMonths() {
 
         monthStackView.hidden = true
         monthStackView.axis = .Vertical
@@ -85,7 +89,7 @@ class CalenderCollectionView: UIViewController {
             let lastDate = eachDate.dateBySubtractingDays(1).dateAtTheStartOfMonth().dateAtStartOfWeek()
             let thisDate = eachDate.dateAtStartOfWeek()
 
-//            print("\(eachDate.log)  [\(lastDate.log) \(thisDate.log)]  \(lastDate.daysBeforeDate(thisDate) / 7) ")
+//            log?.info("\(eachDate.log)  [\(lastDate.log) \(thisDate.log)]  \(lastDate.daysBeforeDate(thisDate) / 7) ")
 
             longGap = Int(lastDate.daysBeforeDate(thisDate) / 7) == 5
             eachDate = eachDate.dateByAddingMonths(1)
@@ -100,6 +104,7 @@ class CalenderCollectionView: UIViewController {
 
     }
 
+    /// Programatically selects date
     func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
         let delta = NSDate.startDate.daysBeforeDate(date)
         let indexPath = NSIndexPath(forItem: delta, inSection: 0)
@@ -108,12 +113,14 @@ class CalenderCollectionView: UIViewController {
     }
 }
 
+//MARK: UICollectionViewDataSource
 extension CalenderCollectionView: UICollectionViewDataSource {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
 
+    /// Returns delta of startdate and endDate
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return NSDate.startDate.daysBeforeDate(NSDate.endDate)
     }
@@ -134,6 +141,7 @@ extension CalenderCollectionView: UICollectionViewDataSource {
     }
 }
 
+//MARK: UICollectionViewDelegate
 extension CalenderCollectionView: UICollectionViewDelegate {
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -171,7 +179,8 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     }
 }
 
-extension UILabel {
+private extension UILabel {
+    /// Label for Month View only
     convenience init(text: String, height: CGFloat) {
         self.init(frame: CGRect())
         self.text = text

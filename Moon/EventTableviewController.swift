@@ -11,15 +11,16 @@ import UIKit
 class EventTableviewController: UIViewController {
     @IBOutlet weak var tableView_: UITableView!
 
-    let names = ["A"]
-
     func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
         let indexPath = NSIndexPath(forRow: 0, inSection: NSDate.startDate.daysBeforeDate(date))
         tableView_.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: animated)
     }
 }
 
+//MARK: UITableViewDataSource
 extension EventTableviewController: UITableViewDataSource {
+
+    /// Returns delta of start date and end date
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return NSDate.startDate.daysBeforeDate(NSDate.endDate)
     }
@@ -60,6 +61,7 @@ extension EventTableviewController: UITableViewDataSource {
     }
 }
 
+//MARK: UITableViewDelegate
 extension EventTableviewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -69,6 +71,7 @@ extension EventTableviewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.min
     }
+
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let todayIndex = NSDate.startDate.daysBeforeDate(NSDate())
         let tomorrowIndex = todayIndex + 1
@@ -79,6 +82,7 @@ extension EventTableviewController: UITableViewDelegate {
             return 50
         }
     }
+    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let date = NSDate.startDate.dateByAddingDays(section)
         let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 25))

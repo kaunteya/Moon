@@ -61,10 +61,37 @@
 			children = (
 				E3AC7CAB1C4FBD5F00606DA1 /* Color.swift */,
 				E3581EA61C521312006C8D78 /* Date.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E3879D901C58763000424389 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
 				E3AC7CA21C4F915100606DA1 /* AFDateExtension.swift */,
 				E3879D8E1C58749100424389 /* XCGLogger.swift */,
 			);
-			name = Extensions;
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		E3879D911C58767C00424389 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */,
+				E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */,
+				E3581EC91C524AE1006C8D78 /* EventTableviewController.swift */,
+				E39D90531C569B490030E875 /* OptionsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E3879D921C58769E00424389 /* SubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E3879D8C1C57F69900424389 /* TableCellView.swift */,
+				E3AC7CA01C4F914100606DA1 /* CollectionViewCells.swift */,
+			);
+			name = SubClasses;
 			sourceTree = "<group>";
 		};
 		E3AC7C4D1C4E34CA00606DA1 = {
@@ -88,13 +115,10 @@
 			children = (
 				E3AC7C5D1C4E34CA00606DA1 /* Main.storyboard */,
 				E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */,
-				E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */,
-				E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */,
-				E3581EC91C524AE1006C8D78 /* EventTableviewController.swift */,
-				E3879D8C1C57F69900424389 /* TableCellView.swift */,
-				E39D90531C569B490030E875 /* OptionsViewController.swift */,
-				E3AC7CA01C4F914100606DA1 /* CollectionViewCells.swift */,
+				E3879D911C58767C00424389 /* View Controllers */,
+				E3879D921C58769E00424389 /* SubClasses */,
 				E3581EA81C5231F9006C8D78 /* Extensions */,
+				E3879D901C58763000424389 /* Libraries */,
 				E3AC7C631C4E34CA00606DA1 /* Assets.xcassets */,
 				E3AC7CAA1C4F9DFA00606DA1 /* Meta */,
 				E3AC7C651C4E34CA00606DA1 /* LaunchScreen.storyboard */,
