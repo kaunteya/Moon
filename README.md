@@ -31,6 +31,10 @@ Implemented using `UITableView`; shows all the events associated with it.
 - [ ] Scrolling table view will accordingly update the selection in Calendar View
 - [x] On focus, it will expand its height
 
+## Libraries
+* [AFDateHelper](https://github.com/melvitax/AFDateHelper)
+* [XCGLogger](https://github.com/DaveWoodCom/XCGLogger)
+
 ## Assumptions /  Notes
 * App is portrait only
 * Tested on all simulators(both iPhone and iPad) and Real Device: iPhone 6 only
