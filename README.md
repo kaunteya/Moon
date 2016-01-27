@@ -20,7 +20,7 @@ Implemented using `UICollection View`; it basically shows the calendar for entir
 - [x] First day of month will have short Month above it; all in Red Font
 - [x] On focus, height will be expanded
 - [x] Scrolling down will show search bar and scrolling up will hide search bar
-- [ ] During scroll, month must be clearly(opaque) visible in center of month cells
+- [x] During scroll, month must be clearly(opaque) visible in center of month cells
 - [ ] No row will be partially visible when scrolling ends.(Sticky rows)
 
 ### Events View
