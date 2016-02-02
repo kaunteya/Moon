@@ -94,7 +94,7 @@
                                     <constraint firstAttribute="height" constant="240" id="7Re-ed-qeh"/>
                                     <constraint firstAttribute="height" constant="90" id="Z3S-tP-cZ3"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="a4O-fm-9xK">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="a4O-fm-9xK" customClass="KSLayout" customModule="Moon" customModuleProvider="target">
                                     <size key="itemSize" width="80" height="45"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>

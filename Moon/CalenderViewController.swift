@@ -60,8 +60,7 @@ class CalenderViewController: UIViewController {
             let width = screenRect.width / 7
             return width
             }()
-        layout.minimumInteritemSpacing = 0.0
-        layout.minimumLineSpacing = 0.0
+
         self.addMonths()
         self.addSearchBar()
     }
@@ -145,6 +144,10 @@ extension CalenderViewController: UICollectionViewDataSource {
 //MARK: UICollectionViewDelegate
 extension CalenderViewController: UICollectionViewDelegate {
 
+    func collectionView(collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+        print("Proposed offset \(proposedContentOffset)")
+        return proposedContentOffset
+    }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DateCell
         (self.parentViewController as! ViewController).tableViewController.notifySelectedDateChangedToDate(cell.dateSource, animated: true)
@@ -152,6 +155,7 @@ extension CalenderViewController: UICollectionViewDelegate {
     }
 
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        print(__FUNCTION__)
         self.compressHeight = false
     }
 

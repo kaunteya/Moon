@@ -15,6 +15,7 @@
 		E39D90541C569B490030E875 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D90531C569B490030E875 /* OptionsViewController.swift */; };
 		E3A92A701C60755C002B72FB /* AFDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A92A6E1C60755C002B72FB /* AFDateExtension.swift */; };
 		E3A92A711C60755C002B72FB /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A92A6F1C60755C002B72FB /* XCGLogger.swift */; };
+		E3A92A731C60C19E002B72FB /* CollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A92A721C60C19E002B72FB /* CollectionLayout.swift */; };
 		E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */; };
 		E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */; };
 		E3AC7C5F1C4E34CA00606DA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AC7C5D1C4E34CA00606DA1 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		E39D90591C575B210030E875 /* screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = screenshot2.png; path = Other/screenshot2.png; sourceTree = SOURCE_ROOT; };
 		E3A92A6E1C60755C002B72FB /* AFDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AFDateExtension.swift; path = lib/AFDateExtension.swift; sourceTree = "<group>"; };
 		E3A92A6F1C60755C002B72FB /* XCGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCGLogger.swift; path = lib/XCGLogger.swift; sourceTree = "<group>"; };
+		E3A92A721C60C19E002B72FB /* CollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionLayout.swift; sourceTree = "<group>"; };
 		E3AC7C561C4E34CA00606DA1 /* Moon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AC7C591C4E34CA00606DA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */,
 				E3581ECB1C528FC9006C8D78 /* CalenderViewController.swift */,
 				E3581EC91C524AE1006C8D78 /* AgendaViewController.swift */,
+				E3A92A721C60C19E002B72FB /* CollectionLayout.swift */,
 				E39D90531C569B490030E875 /* OptionsViewController.swift */,
 			);
 			name = "View Controllers";
@@ -216,6 +219,7 @@
 				E39D90541C569B490030E875 /* OptionsViewController.swift in Sources */,
 				E3AC7CAC1C4FBD5F00606DA1 /* Color.swift in Sources */,
 				E3581ECA1C524AE1006C8D78 /* AgendaViewController.swift in Sources */,
+				E3A92A731C60C19E002B72FB /* CollectionLayout.swift in Sources */,
 				E3581EA71C521312006C8D78 /* Date.swift in Sources */,
 				E3581ECC1C528FC9006C8D78 /* CalenderViewController.swift in Sources */,
 				E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */,
