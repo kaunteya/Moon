@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var calendarViewController: CalenderCollectionView!
-    @IBOutlet var tableViewController: EventTableviewController!
+    @IBOutlet var calendarViewController: CalenderViewController!
+    @IBOutlet var tableViewController: AgendaViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()

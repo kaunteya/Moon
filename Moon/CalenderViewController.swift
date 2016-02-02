@@ -1,5 +1,5 @@
 //
-//  CalenderCollectionView.swift
+//  CalenderViewController.swift
 //  Moon
 //
 //  Created by Kaunteya Suryawanshi on 22/01/16.
@@ -11,7 +11,7 @@ import UIKit
 private let cellHeight = 45.0
 private let searchBarHeight = CGFloat(44)
 
-class CalenderCollectionView: UIViewController {
+class CalenderViewController: UIViewController {
 
     var searchBar: UISearchBar!
     var currentSearchOffset: CGFloat = 0.0
@@ -114,7 +114,7 @@ class CalenderCollectionView: UIViewController {
 }
 
 //MARK: UICollectionViewDataSource
-extension CalenderCollectionView: UICollectionViewDataSource {
+extension CalenderViewController: UICollectionViewDataSource {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -142,7 +142,7 @@ extension CalenderCollectionView: UICollectionViewDataSource {
 }
 
 //MARK: UICollectionViewDelegate
-extension CalenderCollectionView: UICollectionViewDelegate {
+extension CalenderViewController: UICollectionViewDelegate {
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DateCell

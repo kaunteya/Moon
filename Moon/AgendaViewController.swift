@@ -1,5 +1,5 @@
 //
-//  EventTableviewController.swift
+//  AgendaViewController.swift
 //  Moon
 //
 //  Created by Kaunteya Suryawanshi on 22/01/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventTableviewController: UIViewController {
+class AgendaViewController: UIViewController {
     @IBOutlet weak var tableView_: UITableView!
 
     func notifySelectedDateChangedToDate(date: NSDate, animated: Bool) {
@@ -18,7 +18,7 @@ class EventTableviewController: UIViewController {
 }
 
 //MARK: UITableViewDataSource
-extension EventTableviewController: UITableViewDataSource {
+extension AgendaViewController: UITableViewDataSource {
 
     /// Returns delta of start date and end date
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -62,7 +62,7 @@ extension EventTableviewController: UITableViewDataSource {
 }
 
 //MARK: UITableViewDelegate
-extension EventTableviewController: UITableViewDelegate {
+extension AgendaViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25.0

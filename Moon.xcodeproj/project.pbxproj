@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E3581EA71C521312006C8D78 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581EA61C521312006C8D78 /* Date.swift */; };
-		E3581ECA1C524AE1006C8D78 /* EventTableviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581EC91C524AE1006C8D78 /* EventTableviewController.swift */; };
-		E3581ECC1C528FC9006C8D78 /* CalenderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */; };
+		E3581ECA1C524AE1006C8D78 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581EC91C524AE1006C8D78 /* AgendaViewController.swift */; };
+		E3581ECC1C528FC9006C8D78 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3581ECB1C528FC9006C8D78 /* CalenderViewController.swift */; };
 		E3879D8D1C57F69900424389 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3879D8C1C57F69900424389 /* TableCellView.swift */; };
 		E3879D941C587B6C00424389 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3879D931C587B6C00424389 /* Logger.swift */; };
 		E39D90541C569B490030E875 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D90531C569B490030E875 /* OptionsViewController.swift */; };
@@ -26,8 +26,8 @@
 
 /* Begin PBXFileReference section */
 		E3581EA61C521312006C8D78 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		E3581EC91C524AE1006C8D78 /* EventTableviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableviewController.swift; sourceTree = "<group>"; };
-		E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCollectionView.swift; sourceTree = "<group>"; };
+		E3581EC91C524AE1006C8D78 /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
+		E3581ECB1C528FC9006C8D78 /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		E3879D8C1C57F69900424389 /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		E3879D931C587B6C00424389 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E39D90511C5692E80030E875 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				E3AC7C5B1C4E34CA00606DA1 /* ViewController.swift */,
-				E3581ECB1C528FC9006C8D78 /* CalenderCollectionView.swift */,
-				E3581EC91C524AE1006C8D78 /* EventTableviewController.swift */,
+				E3581ECB1C528FC9006C8D78 /* CalenderViewController.swift */,
+				E3581EC91C524AE1006C8D78 /* AgendaViewController.swift */,
 				E39D90531C569B490030E875 /* OptionsViewController.swift */,
 			);
 			name = "View Controllers";
@@ -215,9 +215,9 @@
 				E3AC7C5C1C4E34CA00606DA1 /* ViewController.swift in Sources */,
 				E39D90541C569B490030E875 /* OptionsViewController.swift in Sources */,
 				E3AC7CAC1C4FBD5F00606DA1 /* Color.swift in Sources */,
-				E3581ECA1C524AE1006C8D78 /* EventTableviewController.swift in Sources */,
+				E3581ECA1C524AE1006C8D78 /* AgendaViewController.swift in Sources */,
 				E3581EA71C521312006C8D78 /* Date.swift in Sources */,
-				E3581ECC1C528FC9006C8D78 /* CalenderCollectionView.swift in Sources */,
+				E3581ECC1C528FC9006C8D78 /* CalenderViewController.swift in Sources */,
 				E3AC7C5A1C4E34CA00606DA1 /* AppDelegate.swift in Sources */,
 				E3A92A711C60755C002B72FB /* XCGLogger.swift in Sources */,
 				E3879D941C587B6C00424389 /* Logger.swift in Sources */,
