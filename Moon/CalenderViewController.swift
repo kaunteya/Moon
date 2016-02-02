@@ -60,7 +60,8 @@ class CalenderViewController: UIViewController {
             let width = screenRect.width / 7
             return width
             }()
-
+        layout.minimumInteritemSpacing = 0.0
+        layout.minimumLineSpacing = 0.0
         self.addMonths()
         self.addSearchBar()
     }
