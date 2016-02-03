@@ -1,5 +1,5 @@
 //
-//  CalenderCollectionView.swift
+//  CalenderViewController.swift
 //  Moon
 //
 //  Created by Kaunteya Suryawanshi on 22/01/16.
@@ -11,7 +11,7 @@ import UIKit
 private let cellHeight = 45.0
 private let searchBarHeight = CGFloat(44)
 
-class CalenderCollectionView: UIViewController {
+class CalenderViewController: UIViewController {
 
     var searchBar: UISearchBar!
     var currentSearchOffset: CGFloat = 0.0
@@ -114,7 +114,7 @@ class CalenderCollectionView: UIViewController {
 }
 
 //MARK: UICollectionViewDataSource
-extension CalenderCollectionView: UICollectionViewDataSource {
+extension CalenderViewController: UICollectionViewDataSource {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -142,8 +142,12 @@ extension CalenderCollectionView: UICollectionViewDataSource {
 }
 
 //MARK: UICollectionViewDelegate
-extension CalenderCollectionView: UICollectionViewDelegate {
+extension CalenderViewController: UICollectionViewDelegate {
 
+    func collectionView(collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+        print("Proposed offset \(proposedContentOffset)")
+        return proposedContentOffset
+    }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DateCell
         (self.parentViewController as! ViewController).tableViewController.notifySelectedDateChangedToDate(cell.dateSource, animated: true)
@@ -151,6 +155,7 @@ extension CalenderCollectionView: UICollectionViewDelegate {
     }
 
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        print(__FUNCTION__)
         self.compressHeight = false
     }
 
