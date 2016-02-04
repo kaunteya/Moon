@@ -15,23 +15,24 @@ The purpose of this project is to experiment replicating the Home View of popula
 ----
 ## TODO
 #### General
+- [x] By default Today is selected.
 - [ ] Populate Calendar events from EventKit
 - [ ] Integrate an internet data source to retrieve the weather forecast for the user.
 
 #### Calendar View
-- [x] By default Today is selected.
-- [x] Changing selection must also scroll `Agenda View` to the appropriate Event row
-- [x] First day of month will have short Month above it; all in Red Font
+- [x] Selection by tapping must also scroll `Agenda View` to the appropriate Date
 - [x] On focus, height will be expanded
 - [x] Scrolling down will show search bar and scrolling up will hide search bar
-- [x] During scroll, month must be clearly(opaque) visible in center of month cells
-- [x] No row will be partially visible when scrolling ends.(Sticky rows)
-- [ ] Calendar View must update selection, when user scrolls the `Agenda view`
+- [x] During scroll
+  - [x] month label are made visible visible
+  - [x] Date cells must be translucent
+- [x] Scroll Ends
+  - [x] No row will be partially visible(Sticky rows)
 
 #### Agenda View
 - [x] By default `Todays` Event row will be at the top
-- [x] Selection in calendar must update the Agenda view, so that selected date is at the top
 - [x] On focus, it will expand its height
+- [ ] Scrolling must also update selection in `Calendar View`
 
 ----
 ## Libraries
