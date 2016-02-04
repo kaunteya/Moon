@@ -15,7 +15,8 @@ The purpose of this project is to experiment replicating the Home View of popula
 ----
 ## TODO
 #### General
-- [ ] Integration of EventKit
+- [ ] Populate Calendar events from EventKit
+- [ ] Integrate an internet data source to retrieve the weather forecast for the user.
 
 #### Calendar View
 - [x] By default Today is selected.
